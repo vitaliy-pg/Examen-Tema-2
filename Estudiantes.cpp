@@ -46,10 +46,10 @@ int main() {
     estudiante.edad = 20;
     estudiante.promedio = 8.5;
 
-    estudiante.materias.push_back("Matemáticas");
+    estudiante.materias.push_back("Matematicas");
     estudiante.materias.push_back("Historia");
 
-    estudiante.asistencias.push_back("Asistió el 01/01/2023");
+    estudiante.asistencias.push_back("Asistio el 01/01/2023");
     estudiante.asistencias.push_back("Falta el 02/01/2023");
 
     // Manejo de excepciones en C
@@ -58,7 +58,7 @@ int main() {
         lanzarExcepcionEnC();
     } else {
         // Código para manejar la excepción en C
-        std::cerr << "Excepción atrapada en C: Error personalizado en C\n";
+        std::cerr << "Excepcion atrapada en C: Error personalizado en C\n";
     }
 
     // Código adicional en C++
@@ -67,7 +67,7 @@ int main() {
         throw std::runtime_error("Error personalizado en C++");
     } catch (const std::exception& e) {
         // Código para manejar la excepción en C++
-        std::cerr << "Excepción atrapada en C++: " << e.what() << std::endl;
+        std::cerr << "Excepcion atrapada en C++: " << e.what() << std::endl;
     }
 
     // Mostrar información del estudiante
