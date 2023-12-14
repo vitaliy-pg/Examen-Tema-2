@@ -25,3 +25,8 @@ b
 
 c++ es mucho mas simple y en gran medida hace que ek codigo sea mas facil de entender y a la hora de procesar en programa hay menos fallos a error en el codigo 
 
+
+El archivo estudiantes.cpp tiene hecho el codigo en c++
+
+El otro archivo el codigo esta hecho en c normal
+
