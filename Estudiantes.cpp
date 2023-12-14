@@ -49,3 +49,14 @@ struct EstudianteC {
 void mostrarEstudianteC(struct EstudianteC estudiante) {
     printf("Nombre: %s\nEdad: %d\nPromedio: %.2f\n", estudiante.nombre, estudiante.edad, estudiante.promedio);
 }
+
+void agregarMateriaC(struct EstudianteC* estudiante, const char* materia) {
+    for (int i = 0; i < 10; ++i) {
+        if (estudiante->materias[i][0] == '\0') {
+            strcpy(estudiante->materias[i], materia);
+            return;
+        }
+    }
+    printf("No se pueden agregar más materias.\n");
+}
+
