@@ -24,3 +24,6 @@ struct Estudiante {
         }
         std::cout << std::endl;
     }
+    void agregarMateria(const std::string& materia) {
+        materias.push_back(materia);
+    }
