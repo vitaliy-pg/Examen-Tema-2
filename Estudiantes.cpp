@@ -63,4 +63,5 @@ int main() {
     } catch (const std::exception& e) {
         std::cerr << "Excepción atrapada: " << e.what() << std::endl;
     }
-
+    return 0;
+}
