@@ -135,7 +135,43 @@ void mostrarAsistenciasC(struct EstudianteC* estudiante) {
     }
     printf("\n");
 }
+int main() {
+    // Uso de la estructura y funciones en C++
+    EstudianteCpp estudianteCpp;
+    estudianteCpp.nombre = "Juan";
+    estudianteCpp.edad = 20;
+    estudianteCpp.promedio = 8.5;
 
+    agregarMateriaCpp(estudianteCpp, "Matemáticas");
+    agregarMateriaCpp(estudianteCpp, "Historia");
+
+    registrarAsistenciaCpp(estudianteCpp, "01/01/2023", "Matemáticas", "Asistió");
+    registrarAsistenciaCpp(estudianteCpp, "02/01/2023", "Historia", "Falta");
+
+    std::cout << "Información del estudiante en C++:\n";
+    mostrarEstudianteCpp(estudianteCpp);
+    mostrarMateriasCpp(estudianteCpp);
+    mostrarAsistenciasCpp(estudianteCpp);
+
+    // Uso de la estructura y funciones en C
+    struct EstudianteC estudianteC;
+    strcpy(estudianteC.nombre, "Juan");
+    estudianteC.edad = 20;
+    estudianteC.promedio = 8.5;
+
+    agregarMateriaC(&estudianteC, "Matemáticas");
+    agregarMateriaC(&estudianteC, "Historia");
+
+    registrarAsistenciaC(&estudianteC, "01/01/2023", "Matemáticas", "Asistió");
+    registrarAsistenciaC(&estudianteC, "02/01/2023", "Historia", "Falta");
+
+    printf("Información del estudiante en C:\n");
+    mostrarEstudianteC(estudianteC);
+    mostrarMateriasC(&estudianteC);
+    mostrarAsistenciasC(&estudianteC);
+
+    return 0;
+}
 
 
 
