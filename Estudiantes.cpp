@@ -76,3 +76,4 @@ int main() {
     return 0;
 }
 // ya no da error
+// este codigo no contiene ni una mierda de lo pedido en el examen
