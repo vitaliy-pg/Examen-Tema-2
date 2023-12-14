@@ -59,4 +59,12 @@ void agregarMateriaC(struct EstudianteC* estudiante, const char* materia) {
     }
     printf("No se pueden agregar más materias.\n");
 }
-
+void eliminarMateriaC(struct EstudianteC* estudiante, const char* materia) {
+    for (int i = 0; i < 10; ++i) {
+        if (strcmp(estudiante->materias[i], materia) == 0) {
+            estudiante->materias[i][0] = '\0';
+            return;
+        }
+    }
+    printf("La materia no está registrada.\n");
+}
