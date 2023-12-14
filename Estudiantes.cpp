@@ -11,6 +11,8 @@ struct Estudiante {
     std::vector<std::string> materias;
     std::vector<std::string> asistencias;
 
+    // Función para mostrar información del estudiante
+
     void mostrarEstudiante() {
         std::cout << "Nombre: " << nombre << "\nEdad: " << edad << "\nPromedio: " << promedio << "\nMaterias inscritas:\n";
         for (const auto& materia : materias) {
