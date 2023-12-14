@@ -10,3 +10,8 @@ struct Estudiante {
     float promedio;
     std::vector<std::string> materias;
     std::vector<std::string> asistencias;
+
+    void mostrarEstudiante() {
+        std::cout << "Nombre: " << nombre << "\nEdad: " << edad << "\nPromedio: " << promedio << "\nMaterias inscritas:\n";
+        for (const auto& materia : materias) {
+            std::cout << "- " << materia << "\n";
