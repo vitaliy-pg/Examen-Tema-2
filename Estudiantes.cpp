@@ -46,3 +46,6 @@ struct EstudianteC {
     int asistencias_count;
 };
 
+void mostrarEstudianteC(struct EstudianteC estudiante) {
+    printf("Nombre: %s\nEdad: %d\nPromedio: %.2f\n", estudiante.nombre, estudiante.edad, estudiante.promedio);
+}
