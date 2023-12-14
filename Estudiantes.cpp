@@ -12,3 +12,7 @@ struct EstudianteCpp {
     // Lista de asistencias
     std::vector<struct AsistenciaCpp> asistencias;
 };
+
+void mostrarEstudianteCpp(EstudianteCpp estudiante) {
+    std::cout << "Nombre: " << estudiante.nombre << "\nEdad: " << estudiante.edad << "\nPromedio: " << estudiante.promedio << "\n";
+}
