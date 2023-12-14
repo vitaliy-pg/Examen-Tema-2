@@ -34,3 +34,15 @@ void mostrarMateriasCpp(EstudianteCpp& estudiante) {
     }
     std::cout << "\n";
 }
+
+struct EstudianteC {
+    char nombre[50];
+    int edad;
+    float promedio;
+    // Lista de materias en las que está inscrito el estudiante
+    char materias[10][50];
+    // Lista de asistencias
+    struct AsistenciaC asistencias[50];
+    int asistencias_count;
+};
+
