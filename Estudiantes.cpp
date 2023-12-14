@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 #include <stdexcept>
+
+// Estructura Estudiante en C++
 struct Estudiante {
     std::string nombre;
     int edad;
