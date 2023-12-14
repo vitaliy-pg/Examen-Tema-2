@@ -65,3 +65,4 @@ int main() {
     }
     return 0;
 }
+// me da error el codigo porque soy bobo
