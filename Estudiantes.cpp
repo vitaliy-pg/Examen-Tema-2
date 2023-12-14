@@ -16,3 +16,6 @@ struct EstudianteCpp {
 void mostrarEstudianteCpp(EstudianteCpp estudiante) {
     std::cout << "Nombre: " << estudiante.nombre << "\nEdad: " << estudiante.edad << "\nPromedio: " << estudiante.promedio << "\n";
 }
+void agregarMateriaCpp(EstudianteCpp& estudiante, const std::string& materia) {
+    estudiante.materias.push_back(materia);
+}
