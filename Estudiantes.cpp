@@ -131,6 +131,11 @@ void mostrarAsistenciasC(struct EstudianteC* estudiante) {
     for (int i = 0; i < estudiante->asistencias_count; ++i) {
         printf("Fecha: %s, Materia: %s, Estado: %s\n", estudiante->asistencias[i].fecha,
                estudiante->asistencias[i].materia, estudiante->asist
+        encias[i].estado);
+    }
+    printf("\n");
+}
+
 
 
 
