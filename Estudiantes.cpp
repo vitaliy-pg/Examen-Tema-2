@@ -38,3 +38,8 @@ struct Estudiante {
     void registrarAsistencia(const std::string& asistencia) {
         asistencias.push_back(asistencia);
     }
+
+    void lanzarExcepcion() {
+        throw std::runtime_error("Error personalizado");
+    }
+};
