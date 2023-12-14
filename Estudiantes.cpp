@@ -15,3 +15,10 @@ struct Estudiante {
         std::cout << "Nombre: " << nombre << "\nEdad: " << edad << "\nPromedio: " << promedio << "\nMaterias inscritas:\n";
         for (const auto& materia : materias) {
             std::cout << "- " << materia << "\n";
+        }
+        std::cout << "\nRegistro de asistencias:\n";
+        for (const auto& asistencia : asistencias) {
+            std::cout << "- " << asistencia << "\n";
+        }
+        std::cout << std::endl;
+    }
