@@ -27,3 +27,10 @@ struct Estudiante {
     void agregarMateria(const std::string& materia) {
         materias.push_back(materia);
     }
+
+    void eliminarMateria(const std::string& materia) {
+        auto it = std::find(materias.begin(), materias.end(), materia);
+        if (it != materias.end()) {
+            materias.erase(it);
+        }
+    }
