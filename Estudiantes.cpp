@@ -181,6 +181,8 @@ int main() {
     mostrarMateriasC(&estudianteC);
     mostrarAsistenciasC(&estudianteC);
 
-
+    return 0;
+}
+// otra vez error no jodas
 
 
