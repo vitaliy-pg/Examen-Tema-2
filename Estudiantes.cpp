@@ -1,8 +1,9 @@
-##include <iostream>
+#include <iostream>
 #include <vector>
 #include <string>
-#include <algorithm>  // Necesario para std::find en C++
+#include <cstring> // Necesario para strcpy en C
 
+// Estructura Estudiante en C++
 struct EstudianteCpp {
     std::string nombre;
     int edad;
@@ -13,9 +14,12 @@ struct EstudianteCpp {
     std::vector<struct AsistenciaCpp> asistencias;
 };
 
+// Función para mostrar información del estudiante en C++
 void mostrarEstudianteCpp(EstudianteCpp estudiante) {
     std::cout << "Nombre: " << estudiante.nombre << "\nEdad: " << estudiante.edad << "\nPromedio: " << estudiante.promedio << "\n";
 }
+
+// Funciones para gestionar materias en C++
 void agregarMateriaCpp(EstudianteCpp& estudiante, const std::string& materia) {
     estudiante.materias.push_back(materia);
 }
@@ -35,6 +39,7 @@ void mostrarMateriasCpp(EstudianteCpp& estudiante) {
     std::cout << "\n";
 }
 
+// Estructura Estudiante en C
 struct EstudianteC {
     char nombre[50];
     int edad;
@@ -46,10 +51,12 @@ struct EstudianteC {
     int asistencias_count;
 };
 
+// Función para mostrar información del estudiante en C
 void mostrarEstudianteC(struct EstudianteC estudiante) {
     printf("Nombre: %s\nEdad: %d\nPromedio: %.2f\n", estudiante.nombre, estudiante.edad, estudiante.promedio);
 }
 
+// Funciones para gestionar materias en C
 void agregarMateriaC(struct EstudianteC* estudiante, const char* materia) {
     for (int i = 0; i < 10; ++i) {
         if (estudiante->materias[i][0] == '\0') {
@@ -59,6 +66,7 @@ void agregarMateriaC(struct EstudianteC* estudiante, const char* materia) {
     }
     printf("No se pueden agregar más materias.\n");
 }
+
 void eliminarMateriaC(struct EstudianteC* estudiante, const char* materia) {
     for (int i = 0; i < 10; ++i) {
         if (strcmp(estudiante->materias[i], materia) == 0) {
@@ -77,6 +85,7 @@ void mostrarMateriasC(struct EstudianteC* estudiante) {
     printf("\n");
 }
 
+// Estructura Asistencia en C++
 struct AsistenciaCpp {
     std::string fecha;
     std::string materia;
@@ -101,13 +110,14 @@ void mostrarAsistenciasCpp(EstudianteCpp& estudiante) {
     std::cout << "\n";
 }
 
+// Estructura Asistencia en C
 struct AsistenciaC {
     char fecha[20];
     char materia[50];
     char estado[20];
 };
 
-
+// Funciones para gestionar asistencias en C
 void registrarAsistenciaC(struct EstudianteC* estudiante, const char* fecha, const char* materia, const char* estado) {
     // Integración de la estructura Asistencia con Estudiante
     struct AsistenciaC asistencia;
@@ -129,12 +139,13 @@ void registrarAsistenciaC(struct EstudianteC* estudiante, const char* fecha, con
 void mostrarAsistenciasC(struct EstudianteC* estudiante) {
     printf("Registro de asistencias:\n");
     for (int i = 0; i < estudiante->asistencias_count; ++i) {
-        printf("Fecha: %s, Materia: %s, Estado: %s\n", estudiante->asistencias[i].fecha,
-               estudiante->asistencias[i].materia, estudiante->asist
-        encias[i].estado);
+        printf("Fecha: %
+                       .asistencias[i].fecha,
+               estudiante->asistencias[i].materia, estudiante->asistencias[i].estado);
     }
     printf("\n");
 }
+
 int main() {
     // Uso de la estructura y funciones en C++
     EstudianteCpp estudianteCpp;
@@ -170,9 +181,6 @@ int main() {
     mostrarMateriasC(&estudianteC);
     mostrarAsistenciasC(&estudianteC);
 
-    return 0;
-}
-// vuelve a dar error
 
 
 
