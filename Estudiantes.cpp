@@ -19,3 +19,10 @@ void mostrarEstudianteCpp(EstudianteCpp estudiante) {
 void agregarMateriaCpp(EstudianteCpp& estudiante, const std::string& materia) {
     estudiante.materias.push_back(materia);
 }
+
+void eliminarMateriaCpp(EstudianteCpp& estudiante, const std::string& materia) {
+    auto it = std::find(estudiante.materias.begin(), estudiante.materias.end(), materia);
+    if (it != estudiante.materias.end()) {
+        estudiante.materias.erase(it);
+    }
+}
