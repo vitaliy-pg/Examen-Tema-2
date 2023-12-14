@@ -42,7 +42,7 @@ void mostrarEstudiante(Estudiante* estudiante) {
 
 int main() {
     Estudiante estudiante;
-    estudiante.nombre = "Juan";
+    estudiante.nombre = "Vitaliy el vapor max";
     estudiante.edad = 20;
     estudiante.promedio = 8.5;
 
