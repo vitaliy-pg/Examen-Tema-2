@@ -1,6 +1,6 @@
 # Examen-Tema-2
 
-Si quieres acceder a mi trabajo clic aqui:
+Si quieres acceder a mi trabajo clic aqui: https://github.com/vitaliy-pg/Examen-Tema-2.git
 
 #PARTE 1:
 
