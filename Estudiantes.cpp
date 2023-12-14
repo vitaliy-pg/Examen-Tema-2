@@ -76,3 +76,27 @@ void mostrarMateriasC(struct EstudianteC* estudiante) {
     }
     printf("\n");
 }
+
+struct AsistenciaCpp {
+    std::string fecha;
+    std::string materia;
+    std::string estado;
+};
+
+// Funciones para gestionar asistencias en C++
+void registrarAsistenciaCpp(EstudianteCpp& estudiante, const std::string& fecha, const std::string& materia, const std::string& estado) {
+    AsistenciaCpp asistencia;
+    asistencia.fecha = fecha;
+    asistencia.materia = materia;
+    asistencia.estado = estado;
+
+    estudiante.asistencias.push_back(asistencia);
+}
+
+void mostrarAsistenciasCpp(EstudianteCpp& estudiante) {
+    std::cout << "Registro de asistencias:\n";
+    for (const auto& asistencia : estudiante.asistencias) {
+        std::cout << "Fecha: " << asistencia.fecha << ", Materia: " << asistencia.materia << ", Estado: " << asistencia.estado << "\n";
+    }
+    std::cout << "\n";
+}
