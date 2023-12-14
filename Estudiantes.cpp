@@ -56,3 +56,6 @@ int main() {
 
         estudiante.registrarAsistencia("Asistió el 01/01/2023");
         estudiante.registrarAsistencia("Falta el 02/01/2023");
+
+        estudiante.mostrarEstudiante();
+
