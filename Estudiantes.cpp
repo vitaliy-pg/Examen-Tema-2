@@ -100,3 +100,10 @@ void mostrarAsistenciasCpp(EstudianteCpp& estudiante) {
     }
     std::cout << "\n";
 }
+
+struct AsistenciaC {
+    char fecha[20];
+    char materia[50];
+    char estado[20];
+};
+
