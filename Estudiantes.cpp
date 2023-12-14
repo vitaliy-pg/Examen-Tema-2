@@ -26,3 +26,11 @@ void eliminarMateriaCpp(EstudianteCpp& estudiante, const std::string& materia) {
         estudiante.materias.erase(it);
     }
 }
+
+void mostrarMateriasCpp(EstudianteCpp& estudiante) {
+    std::cout << "Materias inscritas:\n";
+    for (const auto& materia : estudiante.materias) {
+        std::cout << "- " << materia << "\n";
+    }
+    std::cout << "\n";
+}
