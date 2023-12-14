@@ -107,3 +107,21 @@ struct AsistenciaC {
     char estado[20];
 };
 
+
+void registrarAsistenciaC(struct EstudianteC* estudiante, const char* fecha, const char* materia, const char* estado) {
+    // Integración de la estructura Asistencia con Estudiante
+    struct AsistenciaC asistencia;
+    strcpy(asistencia.fecha, fecha);
+    strcpy(asistencia.materia, materia);
+    strcpy(asistencia.estado, estado);
+
+    // Agregar asistencia al estudiante
+    // (En una implementación más completa, podrías usar vectores o listas en lugar de arreglos estáticos)
+    // Aquí asumimos que hay un límite de 50 asistencias
+    if (estudiante->asistencias_count < 50) {
+        estudiante->asistencias_count++;
+        estudiante->asistencias[estudiante->asistencias_count - 1] = asistencia;
+    } else {
+        printf("No se pueden registrar más asistencias.\n");
+    }
+}
