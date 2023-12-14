@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <stdexcept>
+#include <setjmp.h>
 
 // Estructura Estudiante en C++
 struct Estudiante {
@@ -10,59 +11,68 @@ struct Estudiante {
     float promedio;
     std::vector<std::string> materias;
     std::vector<std::string> asistencias;
-
-    // Función para mostrar información del estudiante
-
-    void mostrarEstudiante() {
-        std::cout << "Nombre: " << nombre << "\nEdad: " << edad << "\nPromedio: " << promedio << "\nMaterias inscritas:\n";
-        for (const auto& materia : materias) {
-            std::cout << "- " << materia << "\n";
-        }
-        std::cout << "\nRegistro de asistencias:\n";
-        for (const auto& asistencia : asistencias) {
-            std::cout << "- " << asistencia << "\n";
-        }
-        std::cout << std::endl;
-    }
-    void agregarMateria(const std::string& materia) {
-        materias.push_back(materia);
-    }
-
-    void eliminarMateria(const std::string& materia) {
-        auto it = std::find(materias.begin(), materias.end(), materia);
-        if (it != materias.end()) {
-            materias.erase(it);
-        }
-    }
-
-    void registrarAsistencia(const std::string& asistencia) {
-        asistencias.push_back(asistencia);
-    }
-
-    void lanzarExcepcion() {
-        throw std::runtime_error("Error personalizado");
-    }
 };
 
-int main() {
-    try {
-        Estudiante estudiante;
-        estudiante.nombre = "Juan";
-        estudiante.edad = 20;
-        estudiante.promedio = 8.5;
+// Estructura para simular excepciones en C
+struct C_Exception {
+    const char* mensaje;
+};
 
-        estudiante.agregarMateria("Matemáticas");
-        estudiante.agregarMateria("Historia");
+// Variable para el manejo de excepciones en C
+jmp_buf buffer;
 
-        estudiante.registrarAsistencia("Asistió el 01/01/2023");
-        estudiante.registrarAsistencia("Falta el 02/01/2023");
+// Función para lanzar excepción en C
+void lanzarExcepcionEnC() {
+    C_Exception excepcion = {"Error personalizado en C"};
+    longjmp(buffer, 1);
+}
 
-        estudiante.mostrarEstudiante();
-
-        estudiante.lanzarExcepcion();
-    } catch (const std::exception& e) {
-        std::cerr << "Excepción atrapada: " << e.what() << std::endl;
+// Función para mostrar información del estudiante
+void mostrarEstudiante(Estudiante* estudiante) {
+    std::cout << "Nombre: " << estudiante->nombre << "\nEdad: " << estudiante->edad << "\nPromedio: " << estudiante->promedio << "\nMaterias inscritas:\n";
+    for (const auto& materia : estudiante->materias) {
+        std::cout << "- " << materia << "\n";
     }
+    std::cout << "\nRegistro de asistencias:\n";
+    for (const auto& asistencia : estudiante->asistencias) {
+        std::cout << "- " << asistencia << "\n";
+    }
+    std::cout << std::endl;
+}
+
+int main() {
+    Estudiante estudiante;
+    estudiante.nombre = "Juan";
+    estudiante.edad = 20;
+    estudiante.promedio = 8.5;
+
+    estudiante.materias.push_back("Matemáticas");
+    estudiante.materias.push_back("Historia");
+
+    estudiante.asistencias.push_back("Asistió el 01/01/2023");
+    estudiante.asistencias.push_back("Falta el 02/01/2023");
+
+    // Manejo de excepciones en C
+    if (setjmp(buffer) == 0) {
+        // Código que puede lanzar una excepción en C
+        lanzarExcepcionEnC();
+    } else {
+        // Código para manejar la excepción en C
+        std::cerr << "Excepción atrapada en C: Error personalizado en C\n";
+    }
+
+    // Código adicional en C++
+    try {
+        // Código que puede lanzar una excepción en C++
+        throw std::runtime_error("Error personalizado en C++");
+    } catch (const std::exception& e) {
+        // Código para manejar la excepción en C++
+        std::cerr << "Excepción atrapada en C++: " << e.what() << std::endl;
+    }
+
+    // Mostrar información del estudiante
+    mostrarEstudiante(&estudiante);
+
     return 0;
 }
 // me da error el codigo porque soy bobo
