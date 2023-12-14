@@ -21,5 +21,7 @@ d
 
 b
 
-PARTE 2:
+#PARTE 2:
+
+c++ es mucho mas simple y en gran medida hace que ek codigo sea mas facil de entender y a la hora de procesar en programa hay menos fallos a error en el codigo 
 
