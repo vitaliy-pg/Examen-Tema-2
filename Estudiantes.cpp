@@ -125,3 +125,12 @@ void registrarAsistenciaC(struct EstudianteC* estudiante, const char* fecha, con
         printf("No se pueden registrar más asistencias.\n");
     }
 }
+
+void mostrarAsistenciasC(struct EstudianteC* estudiante) {
+    printf("Registro de asistencias:\n");
+    for (int i = 0; i < estudiante->asistencias_count; ++i) {
+        printf("Fecha: %s, Materia: %s, Estado: %s\n", estudiante->asistencias[i].fecha,
+               estudiante->asistencias[i].materia, estudiante->asist
+
+
+
