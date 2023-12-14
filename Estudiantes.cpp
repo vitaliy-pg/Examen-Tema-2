@@ -59,3 +59,8 @@ int main() {
 
         estudiante.mostrarEstudiante();
 
+        estudiante.lanzarExcepcion();
+    } catch (const std::exception& e) {
+        std::cerr << "Excepción atrapada: " << e.what() << std::endl;
+    }
+
