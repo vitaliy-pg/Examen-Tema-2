@@ -68,3 +68,11 @@ void eliminarMateriaC(struct EstudianteC* estudiante, const char* materia) {
     }
     printf("La materia no está registrada.\n");
 }
+
+void mostrarMateriasC(struct EstudianteC* estudiante) {
+    printf("Materias inscritas:\n");
+    for (int i = 0; i < 10 && estudiante->materias[i][0] != '\0'; ++i) {
+        printf("- %s\n", estudiante->materias[i]);
+    }
+    printf("\n");
+}
