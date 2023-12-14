@@ -43,3 +43,10 @@ struct Estudiante {
         throw std::runtime_error("Error personalizado");
     }
 };
+
+int main() {
+    try {
+        Estudiante estudiante;
+        estudiante.nombre = "Juan";
+        estudiante.edad = 20;
+        estudiante.promedio = 8.5;
