@@ -34,3 +34,7 @@ struct Estudiante {
             materias.erase(it);
         }
     }
+
+    void registrarAsistencia(const std::string& asistencia) {
+        asistencias.push_back(asistencia);
+    }
