@@ -50,3 +50,6 @@ int main() {
         estudiante.nombre = "Juan";
         estudiante.edad = 20;
         estudiante.promedio = 8.5;
+
+        estudiante.agregarMateria("Matemáticas");
+        estudiante.agregarMateria("Historia");
